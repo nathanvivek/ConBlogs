@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:file="http://www.mulesoft.org/schema/mule/file"
+	xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml"
+	xmlns:jms="http://www.mulesoft.org/schema/mule/jms" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:spring="http://www.springframework.org/schema/beans" version="EE-3.3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd 
+http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd 
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd 
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd 
+http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/current/mule-xml.xsd ">
+    <jms:activemq-connector name="AMQ_Connector" brokerURL="tcp://localhost:61616" validateConnections="true" doc:name="Active MQ"/>
+    <flow name="Splitter_SalesFlow1" doc:name="Splitter_SalesFlow1">
+        <jms:inbound-endpoint queue="Sales_Management" doc:name="SALES_MANAGEMENT" connector-ref="AMQ_Connector"/>
+        <splitter  evaluator="xpath" expression="//sales_management/sales" doc:name="Splitter"/>
+        <mulexml:dom-to-xml-transformer name="DomToXml2"/>
+        <jms:outbound-endpoint queue="Consolidator" connector-ref="AMQ_Connector" doc:name="SALES_CONSOLIDATION"/>
+         <choice doc:name="Choice">
+            <when expression="//sales/item_code/text()='56001'" evaluator="xpath">
+                <processor-chain>
+                    <jms:outbound-endpoint queue="Item_1" connector-ref="AMQ_Connector" doc:name="ITEM_1"/>
+                </processor-chain>
+            </when>
+            <when expression="//sales/item_code/text()='56002'" evaluator="xpath">
+                <processor-chain>
+                    <jms:outbound-endpoint queue="Item_2" connector-ref="AMQ_Connector" doc:name="ITEM_2"/>
+                </processor-chain>
+            </when>
+            <when expression="//sales/item_code/text()='56003'" evaluator="xpath">
+                <processor-chain>
+                    <jms:outbound-endpoint queue="Item_3" connector-ref="AMQ_Connector" doc:name="ITEM_3"/>
+                </processor-chain>
+            </when>
+            <otherwise>
+                <processor-chain>
+                    <file:outbound-endpoint responseTimeout="10000" doc:name="File" path="D:\DUMP"/>
+                </processor-chain>
+            </otherwise>
+        </choice>
+        
+    </flow>
+</mule>

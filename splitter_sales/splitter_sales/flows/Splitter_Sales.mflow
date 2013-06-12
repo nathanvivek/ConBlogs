@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mule-configuration xmlns="http://www.mulesoft.com/tooling/messageflow" name="Splitter_Sales">
+    <global-element name="Active MQ" type="org.mule.tooling.ui.modules.core.global.activemq.config" entity-id="Active MQ#1">
+        <properties>
+            <property name="name" value="AMQ_Connector"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="specification"/>
+            <property name="username"/>
+            <property name="password"/>
+            <property name="brokerURL" value="tcp://localhost:61616"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="dispatcherPoolFactory-ref"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="dynamicNotification"/>
+            <property name="validateConnections" value="true"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="jndiInitialFactory"/>
+            <property name="jndiProviderUrl"/>
+            <property name="connectionFactoryJndiName"/>
+            <property name="jndiProviderProperties-ref"/>
+            <property name="jndiDestinations"/>
+            <property name="forceJndiDestinations"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="acknowledgementMode"/>
+            <property name="clientId"/>
+            <property name="maxRedelivery"/>
+            <property name="redeliveryHandlerFactory-ref"/>
+            <property name="numberOfConsumers"/>
+            <property name="durable"/>
+            <property name="noLocal"/>
+            <property name="persistentDelivery"/>
+            <property name="honorQosHeaders"/>
+            <property name="cacheJmsSessions"/>
+            <property name="eagerConsumer"/>
+            <property name="disableTemporaryReplyToDestinations"/>
+            <property name="embeddedMode"/>
+            <property name="connectionFactory-ref"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute" value="http://www.mulesoft.org/schema/mule/jms/activemq-connector"/>
+            <property name="name" value="AMQ_Connector"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="specification"/>
+            <property name="username"/>
+            <property name="password"/>
+            <property name="brokerURL" value="tcp://localhost:61616"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="dispatcherPoolFactory-ref"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="dynamicNotification"/>
+            <property name="validateConnections" value="true"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="jndiInitialFactory"/>
+            <property name="jndiProviderUrl"/>
+            <property name="connectionFactoryJndiName"/>
+            <property name="jndiProviderProperties-ref"/>
+            <property name="jndiDestinations"/>
+            <property name="forceJndiDestinations"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="acknowledgementMode"/>
+            <property name="clientId"/>
+            <property name="maxRedelivery"/>
+            <property name="redeliveryHandlerFactory-ref"/>
+            <property name="numberOfConsumers"/>
+            <property name="durable"/>
+            <property name="noLocal"/>
+            <property name="persistentDelivery"/>
+            <property name="honorQosHeaders"/>
+            <property name="cacheJmsSessions"/>
+            <property name="eagerConsumer"/>
+            <property name="disableTemporaryReplyToDestinations"/>
+            <property name="embeddedMode"/>
+            <property name="connectionFactory-ref"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute" value="http://www.mulesoft.org/schema/mule/jms/activemq-connector"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="auxiliary;index" value="1"/>
+        </properties>
+    </global-element>
+    <flow SubFlow="false" name="Splitter_SalesFlow1" entity-id="5caa2c9d-2fed-4caf-a21d-a554df76c844">
+        <properties>
+            <property name="processingStrategy2"/>
+            <property name="processingStrategy"/>
+            <property name="auxiliary;index" value="2"/>
+            <property name="bussinessEventsLabel"/>
+            <property name="tracking:enable-default-events"/>
+            <property name="auxiliary;index" value="2"/>
+            <property name="auxiliary;index" value="2"/>
+            <property name="auxiliary;index" value="2"/>
+        </properties>
+        <lane hadOnlyOneElement="false" index="0" isChoiceOtherwiseLane="false" entity-id="compartment-lane#1">
+            <endpoint direction="Inbound" message-exchange-pattern="OneWay" name="SALES_MANAGEMENT" type="http://www.mulesoft.org/schema/mule/jms/endpoint" entity-id="JMS#1">
+                <properties>
+                    <property name="exchange-pattern" value="one-way"/>
+                    <property name="exchange-pattern"/>
+                    <property name="auxiliary;index" value="3"/>
+                    <property name="queue" value="Sales_Management"/>
+                    <property name="topic"/>
+                    <property name="auxiliary;index" value="3"/>
+                    <property name="auxiliary;index" value="3"/>
+                    <property name="auxiliary;index" value="3"/>
+                    <property name="businessEventsLabel"/>
+                    <property name="tracking:enable-default-events"/>
+                    <property name="auxiliary;index" value="3"/>
+                    <property name="address"/>
+                    <property name="mimeType"/>
+                    <property name="responseTimeout"/>
+                    <property name="encoding"/>
+                    <property name="durableName"/>
+                    <property name="disableTransportTransformer"/>
+                    <property name="disableTemporaryReplyToDestinations"/>
+                    <property name="auxiliary;index" value="3"/>
+                    <property name="auxiliary;index" value="3"/>
+                    <property name="connector-ref" value="AMQ_Connector"/>
+                    <property name="ref"/>
+                    <property name="transformer-refs"/>
+                    <property name="responseTransformer-refs"/>
+                    <property name="auxiliary;index" value="3"/>
+                    <property name="auxiliary;index" value="3"/>
+                    <property name="auxiliary;index" value="3"/>
+                </properties>
+            </endpoint>
+            <pattern name="Splitter" type="org.mule.tooling.ui.modules.core.pattern.splitter" entity-id="Splitter#1">
+                <properties>
+                    <property name="enableCorrelation"/>
+                    <property name="evaluator" value="xpath"/>
+                    <property name="expression" value="//sales_management/sales"/>
+                    <property name="custom-evaluator"/>
+                    <property name="auxiliary;index" value="4"/>
+                    <property name="auxiliary;index" value="4"/>
+                    <property name="businessEventsLabel"/>
+                    <property name="tracking:enable-default-events"/>
+                    <property name="auxiliary;index" value="4"/>
+                    <property name="auxiliary;index" value="4"/>
+                    <property name="auxiliary;index" value="4"/>
+                </properties>
+            </pattern>
+            <unknown description="false" index="5" entity-id="unknown#1">
+                <content>&lt;mulexml:dom-to-xml-transformer xmlns:mulexml=&quot;http://www.mulesoft.org/schema/mule/xml&quot; name=&quot;DomToXml2&quot;/&gt;</content>
+            </unknown>
+            <endpoint direction="Outbound" message-exchange-pattern="OneWay" name="SALES_CONSOLIDATION" type="http://www.mulesoft.org/schema/mule/jms/endpoint" entity-id="JMS#2">
+                <properties>
+                    <property name="exchange-pattern" value="one-way"/>
+                    <property name="exchange-pattern"/>
+                    <property name="auxiliary;index" value="6"/>
+                    <property name="queue" value="Consolidator"/>
+                    <property name="topic"/>
+                    <property name="auxiliary;index" value="6"/>
+                    <property name="auxiliary;index" value="6"/>
+                    <property name="auxiliary;index" value="6"/>
+                    <property name="businessEventsLabel"/>
+                    <property name="tracking:enable-default-events"/>
+                    <property name="auxiliary;index" value="6"/>
+                    <property name="address"/>
+                    <property name="mimeType"/>
+                    <property name="responseTimeout"/>
+                    <property name="encoding"/>
+                    <property name="durableName"/>
+                    <property name="disableTransportTransformer"/>
+                    <property name="disableTemporaryReplyToDestinations"/>
+                    <property name="auxiliary;index" value="6"/>
+                    <property name="auxiliary;index" value="6"/>
+                    <property name="connector-ref" value="AMQ_Connector"/>
+                    <property name="ref"/>
+                    <property name="transformer-refs"/>
+                    <property name="responseTransformer-refs"/>
+                    <property name="auxiliary;index" value="6"/>
+                    <property name="auxiliary;index" value="6"/>
+                    <property name="auxiliary;index" value="6"/>
+                </properties>
+            </endpoint>
+            <splitter index="7" name="Choice" type="org.mule.tooling.ui.modules.core.pattern.cbr" entity-id="Choice#1">
+                <properties>
+                    <property-collection name="1deefec2-8317-4fdb-b1a5-4216368ed34f">
+                        <property name="choice.otherwise" value="true"/>
+                        <property-collection name="choice.attributes"/>
+                    </property-collection>
+                    <property-collection name="c23a4b06-6971-4b53-a566-6faf9a01e808">
+                        <property name="choice.expression" value="//sales/item_code/text()='56001'"/>
+                        <property-collection name="choice.attributes">
+                            <property name="expression" value="//sales/item_code/text()='56001'"/>
+                            <property name="evaluator" value="xpath"/>
+                        </property-collection>
+                    </property-collection>
+                    <property-collection name="7f63a582-9f06-4692-acb7-dd03096147e6">
+                        <property name="choice.expression" value="//sales/item_code/text()='56003'"/>
+                        <property-collection name="choice.attributes">
+                            <property name="expression" value="//sales/item_code/text()='56003'"/>
+                            <property name="evaluator" value="xpath"/>
+                        </property-collection>
+                    </property-collection>
+                    <property-collection name="3f49ad1d-245f-4934-9c64-b29401027b21">
+                        <property name="choice.expression" value="//sales/item_code/text()='56002'"/>
+                        <property-collection name="choice.attributes">
+                            <property name="expression" value="//sales/item_code/text()='56002'"/>
+                            <property name="evaluator" value="xpath"/>
+                        </property-collection>
+                    </property-collection>
+                </properties>
+                <pattern name="Choice" type="org.mule.tooling.ui.modules.core.pattern.cbr" entity-id="Choice#2"/>
+                <compartment entity-id="compartment#1">
+                    <lane hadOnlyOneElement="false" index="9" isChoiceOtherwiseLane="false" entity-id="c23a4b06-6971-4b53-a566-6faf9a01e808">
+                        <endpoint direction="Outbound" message-exchange-pattern="OneWay" name="ITEM_1" type="http://www.mulesoft.org/schema/mule/jms/endpoint" entity-id="JMS#3">
+                            <properties>
+<property name="exchange-pattern" value="one-way"/>
+<property name="exchange-pattern"/>
+<property name="auxiliary;index" value="10"/>
+<property name="queue" value="Item_1"/>
+<property name="topic"/>
+<property name="auxiliary;index" value="10"/>
+<property name="auxiliary;index" value="10"/>
+<property name="auxiliary;index" value="10"/>
+<property name="businessEventsLabel"/>
+<property name="tracking:enable-default-events"/>
+<property name="auxiliary;index" value="10"/>
+<property name="address"/>
+<property name="mimeType"/>
+<property name="responseTimeout"/>
+<property name="encoding"/>
+<property name="durableName"/>
+<property name="disableTransportTransformer"/>
+<property name="disableTemporaryReplyToDestinations"/>
+<property name="auxiliary;index" value="10"/>
+<property name="auxiliary;index" value="10"/>
+<property name="connector-ref" value="AMQ_Connector"/>
+<property name="ref"/>
+<property name="transformer-refs"/>
+<property name="responseTransformer-refs"/>
+<property name="auxiliary;index" value="10"/>
+<property name="auxiliary;index" value="10"/>
+<property name="auxiliary;index" value="10"/>
+                            </properties>
+                        </endpoint>
+                    </lane>
+                    <lane hadOnlyOneElement="false" index="12" isChoiceOtherwiseLane="false" entity-id="3f49ad1d-245f-4934-9c64-b29401027b21">
+                        <endpoint direction="Outbound" message-exchange-pattern="OneWay" name="ITEM_2" type="http://www.mulesoft.org/schema/mule/jms/endpoint" entity-id="JMS#4">
+                            <properties>
+<property name="exchange-pattern" value="one-way"/>
+<property name="exchange-pattern"/>
+<property name="auxiliary;index" value="13"/>
+<property name="queue" value="Item_2"/>
+<property name="topic"/>
+<property name="auxiliary;index" value="13"/>
+<property name="auxiliary;index" value="13"/>
+<property name="auxiliary;index" value="13"/>
+<property name="businessEventsLabel"/>
+<property name="tracking:enable-default-events"/>
+<property name="auxiliary;index" value="13"/>
+<property name="address"/>
+<property name="mimeType"/>
+<property name="responseTimeout"/>
+<property name="encoding"/>
+<property name="durableName"/>
+<property name="disableTransportTransformer"/>
+<property name="disableTemporaryReplyToDestinations"/>
+<property name="auxiliary;index" value="13"/>
+<property name="auxiliary;index" value="13"/>
+<property name="connector-ref" value="AMQ_Connector"/>
+<property name="ref"/>
+<property name="transformer-refs"/>
+<property name="responseTransformer-refs"/>
+<property name="auxiliary;index" value="13"/>
+<property name="auxiliary;index" value="13"/>
+<property name="auxiliary;index" value="13"/>
+                            </properties>
+                        </endpoint>
+                    </lane>
+                    <lane hadOnlyOneElement="false" index="15" isChoiceOtherwiseLane="false" entity-id="7f63a582-9f06-4692-acb7-dd03096147e6">
+                        <endpoint direction="Outbound" message-exchange-pattern="OneWay" name="ITEM_3" type="http://www.mulesoft.org/schema/mule/jms/endpoint" entity-id="JMS#5">
+                            <properties>
+<property name="exchange-pattern" value="one-way"/>
+<property name="exchange-pattern"/>
+<property name="auxiliary;index" value="16"/>
+<property name="queue" value="Item_3"/>
+<property name="topic"/>
+<property name="auxiliary;index" value="16"/>
+<property name="auxiliary;index" value="16"/>
+<property name="auxiliary;index" value="16"/>
+<property name="businessEventsLabel"/>
+<property name="tracking:enable-default-events"/>
+<property name="auxiliary;index" value="16"/>
+<property name="address"/>
+<property name="mimeType"/>
+<property name="responseTimeout"/>
+<property name="encoding"/>
+<property name="durableName"/>
+<property name="disableTransportTransformer"/>
+<property name="disableTemporaryReplyToDestinations"/>
+<property name="auxiliary;index" value="16"/>
+<property name="auxiliary;index" value="16"/>
+<property name="connector-ref" value="AMQ_Connector"/>
+<property name="ref"/>
+<property name="transformer-refs"/>
+<property name="responseTransformer-refs"/>
+<property name="auxiliary;index" value="16"/>
+<property name="auxiliary;index" value="16"/>
+<property name="auxiliary;index" value="16"/>
+                            </properties>
+                        </endpoint>
+                    </lane>
+                    <lane hadOnlyOneElement="false" index="18" isChoiceOtherwiseLane="true" entity-id="1deefec2-8317-4fdb-b1a5-4216368ed34f">
+                        <endpoint direction="Outbound" message-exchange-pattern="OneWay" name="File" type="http://www.mulesoft.org/schema/mule/file/endpoint" entity-id="File#1">
+                            <properties>
+<property name="exchange-pattern" value="one-way"/>
+<property name="path" value="D:\DUMP"/>
+<property name="outputPattern"/>
+<property name="moveToPattern"/>
+<property name="moveToDirectory"/>
+<property name="auxiliary;index" value="19"/>
+<property name="pollingFrequency"/>
+<property name="fileAge"/>
+<property name="auxiliary;index" value="19"/>
+<property name="auxiliary;index" value="19"/>
+<property name="auxiliary;index" value="19"/>
+<property name="businessEventsLabel"/>
+<property name="tracking:enable-default-events"/>
+<property name="auxiliary;index" value="19"/>
+<property name="address"/>
+<property name="responseTimeout" value="10000"/>
+<property name="encoding"/>
+<property name="disableTransportTransformer"/>
+<property name="mimeType"/>
+<property name="auxiliary;index" value="19"/>
+<property name="comparator"/>
+<property name="reverseOrder"/>
+<property name="auxiliary;index" value="19"/>
+<property name="auxiliary;index" value="19"/>
+<property name="connector-ref"/>
+<property name="ref"/>
+<property name="transformer-refs"/>
+<property name="auxiliary;index" value="19"/>
+<property name="auxiliary;index" value="19"/>
+<property name="auxiliary;index" value="19"/>
+                            </properties>
+                        </endpoint>
+                    </lane>
+                </compartment>
+            </splitter>
+        </lane>
+    </flow>
+    <description></description>
+</mule-configuration>
